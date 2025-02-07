@@ -1,0 +1,14 @@
+[Unit]
+Description=Wyoming Openwakeword Service
+After=network.target
+
+[Service]
+Type=simple
+User=jneerdael
+WorkingDirectory=/Users/jneerdael/Scripts/wyoming-openwakeword
+ExecStart=/Users/jneerdael/Scripts/wyoming-openwakework/script/run -uri 'tcp://0.0.0.0:10400' --preload-model 'ok_nabu'
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
